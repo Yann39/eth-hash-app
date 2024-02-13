@@ -1,0 +1,9 @@
+<zk xmlns:n="native">
+    <n:div class="row">
+        <n:div class="col text-center my-3">
+            <label zclass="z-icon-question-circle-o" stubonly="true"/>
+            <label value="${labels.message.anyQuestion}" stubonly="true"/>
+            <a href="mailto:admin@example.com" label="admin@example.com" stubonly="true"/>
+        </n:div>
+    </n:div>
+</zk>

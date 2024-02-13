@@ -1,0 +1,20 @@
+<zk xmlns:n="native">
+    <n:div class="row border-bottom cy-user-bar">
+        <n:div class="col-sm">
+            <toolbar sclass="u-toolbar" align="start">
+                <toolbarbutton iconSclass="z-icon-home align-baseline" label="${labels.link.home}" href="/"
+                               stubonly="true"/>
+                <toolbarbutton iconSclass="z-icon-file-text-o align-baseline" label="${labels.link.documents}"
+                               href="/diplomas" stubonly="true"/>
+            </toolbar>
+        </n:div>
+        <n:div class="col-sm">
+            <toolbar sclass="u-toolbar float-sm-end" stubonly="true">
+                <toolbarbutton onClick="@command('changeLang', lang='fr', reloadPage=true)" image="img/france.png"
+                               sclass="u-flag"/>
+                <toolbarbutton onClick="@command('changeLang', lang='en', reloadPage=true)" image="img/england.png"
+                               sclass="u-flag"/>
+            </toolbar>
+        </n:div>
+    </n:div>
+</zk>

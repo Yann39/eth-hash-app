@@ -1,0 +1,22 @@
+<?script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"?>
+<?script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"?>
+<?meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"?>
+<zk xmlns:n="native">
+    <nodom viewModel="@id('mainVm') @init('com.example.ethhashapp.vm.MainVm')">
+        <?root-attributes lang="${sessionScope['org.zkoss.web.preferred.locale']}"?>
+        <n:div class="container-fluid">
+            <n:header>
+                <include src="~./zul/header.zul"/>
+            </n:header>
+            <n:nav>
+                <include src="~./zul/user-bar.zul"/>
+            </n:nav>
+            <n:section>
+                <include src="@load(mainVm.centerPage)"/>
+            </n:section>
+            <n:footer>
+                <include src="~./zul/footer.zul"/>
+            </n:footer>
+        </n:div>
+    </nodom>
+</zk>

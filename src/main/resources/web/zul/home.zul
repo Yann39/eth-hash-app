@@ -1,0 +1,9 @@
+<zk xmlns:n="native">
+    <nodom viewModel="@id('homeVm') @init('com.example.ethhashapp.vm.HomeVm')">
+        <n:div class="row py-3 g-0">
+            <n:div class="col">
+                <label value="${labels.title.welcome}" sclass="h2" stubonly="true"/>
+            </n:div>
+        </n:div>
+    </nodom>
+</zk>

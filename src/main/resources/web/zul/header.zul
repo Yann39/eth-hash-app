@@ -1,0 +1,12 @@
+<zk xmlns:n="native">
+    <n:div class="row u-header p-3">
+        <n:div class="col-md-auto me-auto text-center text-sm-start">
+            <a href="/" stubonly="true">
+                <image src="img/ethereum-logo-white.svg" width="230px"/>
+            </a>
+        </n:div>
+        <n:div class="col-md mt-2" align="center">
+            <label value="${mainVm.pageTitle}" sclass="h1" stubonly="true"/>
+        </n:div>
+    </n:div>
+</zk>

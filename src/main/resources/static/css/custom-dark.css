@@ -1,0 +1,847 @@
+:root {
+    --main-color: #365fac;
+    --dark-color: #2c2c2c;
+}
+
+/*region HTML override*/
+
+/* ZK applies 5px of padding by default, reset it */
+body {
+    background-color: var(--dark-color);
+    padding: 0;
+}
+
+/* set default links color to blue */
+a {
+    color: var(--main-color);
+}
+
+/* blue titles */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--main-color);
+}
+
+/*endregion*/
+
+/*region Bootstrap override*/
+
+/* blue titles */
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    color: var(--main-color);
+}
+
+/* to make cards responsive */
+.card-deck {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: .5rem;
+}
+
+/*endregion*/
+
+/*region ZK Bootstrap override*/
+
+/* by default Bootstrap set table borders to collapse, change this so border appears again in lists and grid views */
+.z-grid-body table, .z-listbox-body table {
+    border-collapse: separate;
+}
+
+/* by default Boostrap adds underline style to all links hover, remove it for tab links */
+.z-tab > a:hover {
+    text-decoration: none;
+}
+
+/*endregion*/
+
+/*region ZK override*/
+
+/* remove nowrap for list headers */
+.z-listheader {
+    white-space: normal;
+}
+
+/* groupbox content (increase default 8px top padding) */
+.z-groupbox-content {
+    padding: 16px;
+}
+
+/* blue group box caption titles and increase title font size */
+.z-caption-content, .z-caption .z-label {
+    font-size: 1.15em;
+    color: var(--main-color);
+}
+
+/* reduce caption titles on mobile devices */
+.mobile .z-caption-content, .z-caption .z-label {
+    font-size: 1em;
+}
+
+/* remove blue vertical borders in grids columns headers */
+.z-column:not(:first-child) {
+    border-left: 1px solid #fff;
+}
+
+/* remove blue bottom border in grids columns headers */
+.z-column {
+    border-bottom: 1px solid #fff;
+}
+
+/* hide borders of columns bar (the column displayed in case of vertical scrollbar) */
+.z-columns-bar {
+    border: none;
+}
+
+/* white text and icon in windows' headers */
+.z-window-header, .z-window-icon {
+    color: white;
+}
+
+/* readonly labels appear in grey by default, keep the black color on white background */
+.z-combobox-input[readonly], .z-timepicker-input[readonly], .z-bandbox-readonly > input {
+    color: inherit;
+    background: inherit;
+}
+
+/* default chosen box placeholder is black, change it to gray */
+.z-chosenbox-input {
+    color: #a8a8a8;
+}
+
+/* change list group header background as it is white by default */
+.z-listgroup.z-listgroup-open .z-listgroup-inner {
+    background: #daf1ff;
+}
+
+/* remove menubar border, reduce padding and background-color */
+.z-menubar {
+    background: none;
+    border: none;
+    padding: 6px 12px;
+}
+
+/* remove menubar item background-color */
+.z-menu-content, .z-menuitem-content {
+    background: none;
+}
+
+/* change rating icon size, color and hover style */
+.z-rating > .z-rating-icon {
+    font-size: 16pt;
+}
+
+.z-rating > .z-rating-selected {
+    color: var(--main-color);
+}
+
+.z-rating > .z-rating-hover {
+    color: var(--main-color);
+    text-shadow: none;
+    font-weight: bold;
+}
+
+/* force break words in list cells */
+.z-listcell-content {
+    overflow-wrap: break-word;
+}
+
+/* change menu bars appearance to look like buttons in list views and grid views */
+.z-listcell-content .z-menubar, .z-row-content .z-menubar {
+    background: none;
+    padding: 0;
+}
+
+.z-listcell-content .z-menubar .z-menu .z-menu-content, .z-listcell-content .z-menubar .z-menu .z-menuitem-content,
+.z-row-content .z-menubar .z-menu .z-menu-content, .z-row-content .z-menubar .z-menu .z-menuitem-content {
+    background: var(--main-color);
+    color: white;
+    padding: 10px 16px;
+}
+
+.z-listcell-content .z-menubar .z-menu .z-menu-content .z-menu-icon, .z-row-content .z-menubar .z-menu .z-menu-content .z-menu-icon {
+    position: inherit;
+    right: inherit;
+    top: inherit;
+}
+
+/* reset font size for icon buttons so that it does not create extra height compared to text buttons */
+.z-button i {
+    font-size: inherit;
+}
+
+/* because by default it is 0 8px and it is ugly in textareas */
+.z-textbox, .z-decimalbox, .z-intbox, .z-longbox, .z-doublebox {
+    padding: 8px;
+}
+
+/* reduce space below rangeslider */
+.z-rangeslider-horizontal .z-rangeslider-inner {
+    margin: 10px 12px 30px;
+}
+
+/*endregion*/
+
+/*region ZK Calendar override */
+.z-calevent-daylong-month .z-calevent-text {
+    height: 20px;
+    line-height: 20px;
+}
+
+.z-calendars-t1, .z-calendars-t2, .z-calendars-t3 {
+    background-color: white;
+    border: none;
+}
+
+.z-calendars-inner {
+    background-color: white;
+    border: none;
+}
+
+.z-calendars-body {
+    background-color: white;
+}
+
+.z-calendars-day-header, .z-calendars-month-header {
+    background-color: white;
+}
+
+.z-calendars-day-header .z-calendars-day-of-week, .z-calendars-month-header .z-calendars-day-of-week {
+    color: #000;
+    font-family: "Dosis", sans-serif;;
+    font-size: 15px;
+    text-transform: capitalize;
+}
+
+.z-calendars-week-header-arrow {
+    border-left: 5px solid white;
+    border-right: 5px solid white;
+}
+
+.z-calendars-week-header-arrow.z-calendars-week-header-arrow-close {
+    border: 5px solid white;
+    border-left-color: #888;
+}
+
+.z-calendars-fm, .z-calendars-fl, .z-calendars-fr, .z-calendars-b1, .z-calendars-b2, .z-calendars-b3 {
+    background: none;
+}
+
+.z-calendars-day-of-month-bg td {
+    background-color: aliceblue;
+    border-left: 1px solid white;
+}
+
+.z-calendars-week-cnt {
+    background-color: aliceblue;
+}
+
+.z-calendars-week-day:first-child {
+    border-left: 3px solid white;
+}
+
+.z-calendars-month-date {
+    color: white;
+    background-color: var(--main-color);
+    font-family: "Dosis", sans-serif;;
+    font-size: 14px;
+    line-height: 20px;
+    border-left: 1px solid white;
+    border-top: 1px solid white;
+}
+
+.z-calendars-month-date.z-calendars-week-today {
+    background-color: var(--main-color);
+}
+
+.z-calendars-daylong-body {
+    background-color: var(--main-color);
+    border: none;
+}
+
+.z-calendars-week-cnt .z-calendars-timezone {
+    background-color: var(--main-color);
+}
+
+.z-calendars-hour-of-day {
+    border-bottom: 1px solid white;
+    color: white;
+}
+
+.z-calendars-daylong-evt {
+    border-left: 3px solid white;
+}
+
+.z-calendars-day-of-week-inner.z-calendars-week-today {
+    background-color: white;
+    border: none;
+    color: var(--main-color);
+}
+
+.z-calendars-day-of-week-inner {
+    color: black;
+}
+
+.z-calendars-hour-sep {
+    border-bottom: 1px dotted white;
+    border-top: 1px solid white;
+}
+
+.z-calendars-week-day {
+    border-left: 3px solid white;
+}
+
+.z-calendars-week-body {
+    overflow-y: auto;
+}
+
+.z-toolbarbutton-content {
+    color: white;
+}
+
+.z-groupbox-content,
+.z-groupbox>.z-groupbox-header,
+.z-groupbox>.z-groupbox-header .z-caption,
+.z-groupbox>.z-groupbox-header .z-groupbox-title{
+    background: var(--dark-color);
+}
+
+/*endregion*/
+
+/*region Theme overrides based on ZK iceblue theme */
+body.iceblue .u-header, body.iceblue .z-window {
+    background: var(--main-color);
+}
+
+body.iceblue .z-listheader, body.iceblue .z-listheader:active {
+    background: var(--main-color);
+    border-bottom: none;
+}
+
+body.iceblue .z-button:not(:disabled) {
+    background-color: var(--main-color);
+}
+
+body.iceblue .z-a {
+    color: var(--main-color);
+}
+
+body.iceblue .z-toolbarbutton:hover, body.iceblue .z-toolbarbutton:focus {
+    background-color: var(--main-color);
+}
+
+body.iceblue .z-chosenbox-item {
+    background-color: var(--main-color);
+}
+
+body.iceblue .z-combobox-button:active,
+body.iceblue .z-bandbox-button:active,
+body.iceblue .z-datebox-button:active,
+body.iceblue .z-timebox-button:active,
+body.iceblue .z-spinner-button:active {
+    background-color: var(--main-color);
+}
+
+body.iceblue .z-doublespinner-active.z-doublespinner-icon,
+body.iceblue .z-doublespinner-active.z-doublespinner-icon:hover {
+    background: var(--main-color);
+}
+
+body.iceblue .z-spinner-active.z-spinner-icon,
+body.iceblue .z-spinner-active.z-spinner-icon:hover {
+    background: var(--main-color);
+}
+
+body.iceblue .z-comboitem-selected {
+    color: var(--main-color);
+}
+
+body.iceblue .z-menu-content:active, .z-menuitem-content:active {
+    background-color: var(--main-color);
+}
+
+body.iceblue .z-menu-selected > .z-menu-content {
+    background-color: var(--main-color);
+}
+
+body.iceblue .z-menupopup .z-menu-content:active, .z-menupopup .z-menuitem-content:active {
+    background-color: var(--main-color);
+}
+
+body.iceblue .z-tab-selected {
+    border-bottom: 2px solid var(--main-color);
+}
+
+body.iceblue .z-tab-selected .z-tab-text {
+    color: var(--main-color);
+}
+
+body.iceblue .z-column {
+    background: var(--main-color);
+}
+
+body.iceblue .z-listgroup.z-listgroup-open .z-listgroup-inner .z-listgroup-icon, .z-listgroup.z-listgroup-open .z-listgroup-inner .z-listcell-content {
+    color: var(--main-color);
+}
+
+body.iceblue .z-listgroup.z-listgroup-open .z-listgroup-inner {
+    border-bottom: 2px solid var(--main-color);
+}
+
+body.iceblue input[type="checkbox"]:checked {
+    background-color: var(--main-color);
+}
+
+body.iceblue .z-checkbox-switch-on > .z-checkbox-mold {
+    background-color: var(--main-color);
+}
+
+body.iceblue input[type="radio"]:checked::before {
+    background-color: var(--main-color);
+}
+
+body.iceblue input[type="radio"]:checked {
+    border-color: var(--main-color);
+}
+
+body.iceblue .z-calendar-selected {
+    background: var(--main-color);
+}
+
+body.iceblue .z-paging-button:active {
+    background-color: var(--main-color);
+}
+
+body.iceblue .z-listheader:not(:first-child) {
+    border-left: 1px solid white;
+}
+
+body.iceblue .z-listhead-bar {
+    background: var(--main-color);
+    border-left: 1px solid var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+}
+
+body.iceblue .z-listitem-checkable {
+    color: var(--main-color);
+}
+
+/* Range slider */
+body.iceblue .z-rangeslider .z-sliderbuttons-area {
+    background-color: var(--main-color);
+}
+
+body.iceblue .z-rangeslider .z-sliderbuttons-button {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+/* Multi slider */
+body.iceblue .z-multislider .z-sliderbuttons-area {
+    background-color: var(--main-color);
+}
+
+body.iceblue .z-multislider .z-sliderbuttons-button {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+body.iceblue .z-rangeslider-mark-active .z-rangeslider-mark-dot {
+    border-color: var(--main-color);
+}
+
+/* Time picker */
+body.iceblue .z-timepicker-button:active {
+    background-color: var(--main-color);
+}
+
+/* stepbar icon color */
+body.iceblue .z-step-active .z-step-icon-empty,
+body.iceblue .z-step-complete .z-step-icon-empty {
+    border-color: var(--main-color);
+}
+
+/* stepbar completed icon color */
+body.iceblue .z-step .z-icon-check {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+/* stepbar line color */
+body.iceblue .z-stepbar-linear .z-step-active::before, body.iceblue .z-stepbar-linear .z-step-complete::before {
+    background-color: var(--main-color);
+}
+
+/* stepbar line color around icons */
+body.iceblue .z-stepbar-wrapped-label.z-stepbar-linear .z-step-complete::after,
+body.iceblue .z-stepbar-wrapped-label.z-stepbar-linear .z-step-complete .z-step-content::after,
+body.iceblue .z-stepbar-wrapped-label.z-stepbar-linear .z-step-active .z-step-content::before,
+body.iceblue .z-stepbar-wrapped-label.z-stepbar-linear .z-step-complete .z-step-content::before {
+    background-color: var(--main-color);
+}
+
+/* Search box */
+body.iceblue .z-searchbox:active {
+    /*background: var(--main-color);*/
+    background: inherit;
+    color: inherit;
+}
+
+body.iceblue .z-searchbox-item.z-searchbox-selected > .z-searchbox-item-check {
+    background: white;
+    color: var(--main-color);
+    font-size: 18px;
+}
+
+body.iceblue .z-searchbox-item.z-searchbox-selected {
+    background: var(--main-color);
+    border-radius: 0;
+    color: white;
+}
+
+/*endregion*/
+
+/*region Custom*/
+
+/* custom notifications */
+.u-app-notifications .z-popup-content {
+    border: none;
+    padding: 0;
+}
+
+.u-app-notifications .list-group {
+    max-height: 600px;
+    overflow: auto;
+}
+
+.u-notifier {
+    position: relative;
+    display: inline-block;
+}
+
+.u-notifier.u-new-notification .z-icon-bell {
+    transition: 0.3s;
+    animation: bell 1s 1s both infinite;
+}
+
+.u-notifier .badge {
+    position: absolute;
+    top: -3px;
+    left: 20px;
+    padding: 0 5px;
+    line-height: 21px;
+    height: 20px;
+    border-radius: 10px;
+    white-space: nowrap;
+}
+
+.u-notifier.u-new-notification .badge {
+    animation: pulse 2s ease-out;
+    animation-iteration-count: infinite;
+}
+
+.u-notification-content {
+    display: inline-block;
+    max-height: 48px;
+    overflow: hidden;
+}
+
+@keyframes pulse {
+    40% {
+        transform: scale3d(1, 1, 1);
+    }
+    50% {
+        transform: scale3d(1.3, 1.3, 1.3);
+    }
+    55% {
+        transform: scale3d(1, 1, 1);
+    }
+    60% {
+        transform: scale3d(1.3, 1.3, 1.3);
+    }
+    65% {
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes bell {
+    0% {
+        transform: rotate(0);
+    }
+    10% {
+        transform: rotate(30deg);
+    }
+    20% {
+        transform: rotate(0);
+    }
+    80% {
+        transform: rotate(0);
+    }
+    90% {
+        transform: rotate(-30deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+
+/* shadow below header */
+.u-header {
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* white title in header */
+.u-header .h1 {
+    color: white;
+}
+
+/* reduce title size on mobile devices */
+.mobile .u-header .h1 {
+    font-size: 1.8em;
+}
+
+/* toolbar */
+.u-toolbar.z-toolbar {
+    background: none;
+    padding: 6px 0;
+}
+
+.u-toolbar .u-flag img {
+    height: 13px;
+    width: 20px;
+}
+
+.u-toolbar .z-toolbarbutton, .u-toolbar .z-toolbarbutton-content > * {
+    margin: 0;
+}
+
+.u-toolbar .z-toolbarbutton {
+    padding: 2px 6px;
+}
+
+.u-toolbar a:not([href]):hover, .u-toolbar a:not([href]):active {
+    color: white;
+}
+
+/* flag icon size */
+.u-flag.z-image {
+    height: 17px;
+    width: 27px;
+}
+
+/* not selected flag icon style */
+.u-flag-not-selected.z-image {
+    cursor: pointer;
+    height: 14px;
+    opacity: 0.6;
+    width: 22px;
+}
+
+/* multiple selection dropdown list inside bandbox */
+.u-multiple-dropdown .z-listitem.z-listitem-selected > .z-listcell > .z-listcell-content {
+    color: #ffffff;
+}
+
+.u-multiple-dropdown .z-listitem.z-listitem-focus:hover > .z-listcell,
+.u-multiple-dropdown .z-listitem.z-listitem-focus > .z-listcell {
+    background: #ffffff;
+}
+
+.u-multiple-dropdown .z-listitem.z-listitem-selected > .z-listcell,
+.u-multiple-dropdown .z-listitem.z-listitem-selected.z-listitem-focus > .z-listcell,
+.u-multiple-dropdown .z-listitem.z-listitem-selected:hover > .z-listcell {
+    background: var(--main-color);
+}
+
+.u-multiple-dropdown .z-listheader-content,
+.u-multiple-dropdown .z-listcell-content,
+.u-multiple-dropdown .z-listgroup-content,
+.u-multiple-dropdown .z-listgroupfoot-content,
+.u-multiple-dropdown .z-listfooter-content {
+    padding: 8px 12px;
+}
+
+.u-multiple-dropdown .z-listitem .z-listcell {
+    border-top: none;
+}
+
+.u-multiple-dropdown.z-listbox {
+    border: none;
+}
+
+/* required fields style */
+.u-label-required:after {
+    color: #e32;
+    content: '*';
+    display: inline;
+}
+
+/* badges */
+.u-badge-status {
+    padding: .8em 1em;
+    text-transform: uppercase;
+    width: 138px;
+}
+
+/* pointer cursor for clickable content */
+.u-clickable {
+    cursor: pointer;
+}
+
+/* to display max 5 lines of content */
+.u-content-5 {
+    display: inline-block;
+    max-height: calc(16px * 1.3 * 5);
+    overflow: auto;
+    width: 100%;
+}
+
+/* to display max 5 lines of content (with border) */
+.u-content-b-5 {
+    border: 1px solid #ccc;
+    display: inline-block;
+    height: calc(16px * 1.3 * 5);
+    overflow: auto;
+    width: 100%;
+}
+
+/* multiline ellipsis after 5 lines of text */
+.u-crop-text-5 {
+    display: -webkit-box;
+    line-clamp: 5 "…";
+    line-height: 1.3;
+    min-height: calc(1.3 * 16 * 5px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+}
+
+/* to set last p element as inline in a generated content */
+.u-inline-p p:last-child {
+    display: inline;
+}
+
+/* for left thumbnail images in card titles */
+.u-img-card-title {
+    border-radius: .25rem;
+    float: left;
+    margin-right: .5rem;
+    max-height: 48px;
+}
+
+/* expandable content with show less/show more links */
+.u-expandable {
+    /* to be able to position absolute elements inside */
+    position: relative;
+}
+
+.u-expandable.card-body {
+    padding-bottom: 40px;
+}
+
+.u-expandable .u-flag {
+    bottom: 10px;
+    height: 10px;
+    position: absolute;
+    right: 10px;
+    width: 14px;
+}
+
+.u-expandable .u-more-info {
+    bottom: 10px;
+    position: absolute;
+    left: 16px;
+}
+
+.u-expandable .z-html > p {
+    margin-bottom: 0;
+}
+
+.u-expandable span.collapse {
+    display: block;
+    height: 46px !important;
+    overflow: hidden;
+}
+
+.u-expandable span.collapse.show {
+    display: block;
+    height: auto !important;
+    overflow: unset;
+}
+
+.u-expandable > a {
+    color: inherit;
+    text-decoration: none;
+    font-style: italic;
+}
+
+.u-expandable > a.collapsed:after {
+    content: attr(show-more-label);
+}
+
+.u-expandable > a:not(.collapsed):after {
+    content: attr(show-less-label);
+}
+
+/* light blue cards (override bootstrap cards) */
+.u-card-blue .card-header {
+    background-color: rgba(128, 192, 255, 0.2);
+}
+
+.u-card-blue .card-body {
+    background-color: rgba(192, 192, 255, 0.1);
+}
+
+.u-card-blue .card-footer {
+    background-color: rgba(192, 192, 255, 0.2);
+    border-radius: 0 0 calc(1.2rem - 1px) calc(1.2rem - 1px);
+}
+
+.u-card-blue.card {
+    border-radius: 1.2em;
+}
+
+.u-card-blue .card-img-top {
+    border-top-left-radius: calc(1.2rem - 1px);
+    border-top-right-radius: calc(1.2rem - 1px);
+}
+
+.u-card-blue > picture {
+    position: relative
+}
+
+.u-card-blue > picture > img {
+    height: 180px;
+    object-fit: cover;
+    object-position: 0 100%;
+}
+
+.u-card-blue > picture > button {
+    bottom: -18px;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+    position: absolute;
+    right: 16px;
+    z-index: 1;
+}
+
+.u-card-blue:hover {
+    transform: scale(1.02);
+}
+
+/* custom purple background */
+.u-bg-purple {
+    background-color: #8f33dd !important;
+}
+
+/* course schedules container in catalog cards */
+.u-card-schedules {
+    max-height: 74px;
+    overflow-y: auto;
+}
+
+/* small link without underline */
+.u-clean-link-sm {
+    text-decoration: none;
+    font-size: 13px;
+}
+
+/*endregion*/

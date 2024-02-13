@@ -1,0 +1,118 @@
+<zk xmlns:n="native">
+    <nodom viewModel="@id('diplomaVm') @init('com.example.ethhashapp.vm.DiplomaVm')">
+        <groupbox closable="false" sclass="mt-3">
+            <caption label="${labels.title.ethereumNetwork}" stubonly="true"/>
+            <div visible="@load(empty diplomaVm.clientVersion)">
+                <n:div class="row">
+                    <n:div class="col">
+                        <n:div class="alert alert-danger">
+                            <label value="${labels.label.notConnected}"/>
+                        </n:div>
+                        <button iconSclass="z-icon-link" label="${labels.action.connect}"
+                                onClick="@command('connectToEthereum')"
+                                autodisable="self" stubonly="true"/>
+                    </n:div>
+                </n:div>
+            </div>
+            <div visible="@load(not empty diplomaVm.clientVersion)">
+                <n:div class="row">
+                    <n:div class="col">
+                        <n:div class="alert alert-success">
+                            <label value="${labels.label.connected}"/>
+                        </n:div>
+                        <grid>
+                            <columns>
+                                <column hflex="1"/>
+                                <column hflex="3"/>
+                            </columns>
+                            <rows>
+                                <row>
+                                    <label value="${labels.label.clientVersion}" sclass="fw-bold"/>
+                                    <label value="@load(diplomaVm.clientVersion)"/>
+                                </row>
+                                <row>
+                                    <label value="${labels.label.blockNumber}" sclass="fw-bold"/>
+                                    <label value="@load(diplomaVm.blockNumber)"/>
+                                </row>
+                                <row>
+                                    <label value="${labels.label.gasPrice}" sclass="fw-bold"/>
+                                    <label value="@load(diplomaVm.gasPrice)"/>
+                                </row>
+                                <row>
+                                    <label value="${labels.label.balance}" sclass="fw-bold"/>
+                                    <label value="@load(diplomaVm.balance)"/>
+                                </row>
+                            </rows>
+                        </grid>
+                    </n:div>
+                </n:div>
+                <n:div class="row mt-3">
+                    <n:div class="col">
+                        <button iconSclass="z-icon-link" label="${labels.action.disconnect}"
+                                onClick="@command('disconnectFromEthereum')"
+                                autodisable="self" stubonly="true"/>
+                    </n:div>
+                </n:div>
+            </div>
+        </groupbox>
+
+        <groupbox closable="false" sclass="mt-3">
+            <caption label="${labels.title.documents}" stubonly="true"/>
+            <n:div class="row">
+                <n:div class="col">
+                    <label zclass="z-icon-info fst-italic" stubonly="true"/>
+                    <label value="${labels.message.documentsInfo}" sclass="fst-italic" stubonly="true"/>
+                </n:div>
+            </n:div>
+            <n:div class="row mt-3">
+                <n:div class="col">
+                    <grid mold="paging" pageSize="10" emptyMessage="${labels.message.noDocuments}"
+                          model="@load(diplomaVm.diplomas)">
+                        <columns>
+                            <column label="${labels.label.title}" hflex="1" sort="auto(title)"/>
+                            <column label="${labels.label.document}" hflex="1"/>
+                            <column label="Actions" width="180px"/>
+                        </columns>
+                        <template name="model">
+                            <row>
+                                <textbox value="@bind(each.title)" maxlength="255" hflex="1"/>
+                                <div>
+                                    <button iconSclass="z-icon-file-text-o" label="${labels.action.selectFile}"
+                                            upload="true,maxsize=500,accept=document/*"
+                                            onUpload="@command('addFileAttachment', diploma=each)" autodisable="self"/>
+                                    <div visible="@load(not empty each.file)">
+                                        <label value="@load(each.file.fileName)"/>
+                                        <label zclass="z-icon-floppy-o u-clickable"
+                                               onClick="@command('downloadFile', file=each.file.file, filename=each.file.fileName)"/>
+                                        <label zclass="z-icon-trash u-clickable text-danger"
+                                               onClick="@command('removeFileAttachment', diploma=each)"/>
+                                    </div>
+                                    <div visible="@load(empty each.file)">
+                                        <label sclass="fst-italic" value="${labels.message.noAttachment}"/>
+                                    </div>
+                                </div>
+                                <n:div>
+                                    <button iconSclass="z-icon-search"
+                                            onClick="@command('openViewNotificationDialog', diploma=each)"/>
+                                    <button iconSclass="z-icon-trash" autodisable="self"
+                                            onClick="@command('removeDiploma', diploma=each)"/>
+                                </n:div>
+                            </row>
+                        </template>
+                    </grid>
+                </n:div>
+            </n:div>
+            <n:div class="row mt-3">
+                <n:div class="col">
+                    <button iconSclass="z-icon-plus" label="${labels.action.add}" onClick="@command('addDiploma')"
+                            sclass="mt-md-0 mt-1" stubonly="true"/>
+                    <button iconSclass="z-icon-undo" label="${labels.action.cancel}" onClick="@command('loadDiplomas')"
+                            sclass="mt-md-0 mt-1 bg-secondary" autodisable="self" stubonly="true"/>
+                    <button iconSclass="z-icon-floppy-o" label="${labels.action.save}"
+                            onClick="@command('saveDiplomas')" sclass="mt-md-0 mt-1 bg-success" autodisable="self"
+                            stubonly="true"/>
+                </n:div>
+            </n:div>
+        </groupbox>
+    </nodom>
+</zk>

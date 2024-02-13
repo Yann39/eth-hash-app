@@ -1,0 +1,91 @@
+<window id="viewDocumentDialog" title="@load(viewDiplomaVm.diploma.title)" border="normal"
+        mode="modal" position="center,center" closable="true" action="show: slideDown;hide: slideUp" xmlns:n="native"
+        viewModel="@id('viewDiplomaVm') @init('com.example.ethhashapp.vm.ViewDiplomaVm')" width="900px">
+    <n:div class="row">
+        <n:div class="col">
+            <groupbox closable="false">
+                <caption label="${labels.title.document}" stubonly="true"/>
+                <grid>
+                    <columns>
+                        <column hflex="1"/>
+                        <column hflex="3"/>
+                    </columns>
+                    <rows>
+                        <row>
+                            <label value="${labels.label.title}" sclass="fw-bold"/>
+                            <label value="${viewDiplomaVm.diploma.title}" stubonly="true"/>
+                        </row>
+                        <row>
+                            <label value="${labels.label.fileName}" sclass="fw-bold"/>
+                            <label value="${viewDiplomaVm.diploma.file.fileName}"/>
+                        </row>
+                        <row>
+                            <label value="${labels.label.sha256hex}" sclass="fw-bold"/>
+                            <label value="${viewDiplomaVm.sha256hex}"/>
+                        </row>
+                    </rows>
+                </grid>
+            </groupbox>
+        </n:div>
+    </n:div>
+    <n:div class="row mt-3">
+        <n:div class="col">
+            <groupbox closable="false">
+                <caption label="${labels.title.ethereumStorage}" stubonly="true"/>
+                <nodom visible="@load(not empty viewDiplomaVm.storageDate)">
+                    <n:div class="row">
+                        <n:div class="col">
+                            <n:div class="alert alert-success">
+                                <label value="${labels.label.foundOnChain}"/>
+                            </n:div>
+                        </n:div>
+                    </n:div>
+                    <n:div class="row">
+                        <n:div class="col">
+                            <grid>
+                                <columns>
+                                    <column hflex="1"/>
+                                    <column hflex="3"/>
+                                </columns>
+                                <rows>
+                                    <row>
+                                        <label value="${labels.label.storageDate}" sclass="fw-bold"/>
+                                        <label value="@init(viewDiplomaVm.storageDate) @converter('formattedLocalDateTime', format='dd MMM yyyy HH:mm')"
+                                               stubonly="true"/>
+                                    </row>
+                                </rows>
+                            </grid>
+                        </n:div>
+                    </n:div>
+                </nodom>
+                <nodom visible="@load(empty viewDiplomaVm.storageDate)">
+                    <n:div class="row">
+                        <n:div class="col">
+                            <n:div class="alert alert-danger">
+                                <label value="${labels.label.notFoundOnChain}"/>
+                            </n:div>
+                        </n:div>
+                    </n:div>
+                    <n:div class="row">
+                        <n:div class="col">
+                            <inputgroup hflex="1">
+                                <textbox value="@bind(viewDiplomaVm.fromPrivateKey)" hflex="1"
+                                         placeholder="${labels.ph.privateKey}"/>
+                                <button iconSclass="z-icon-link" label="${labels.action.write}"
+                                        onClick="@command('saveHashToEthereum')" autodisable="self"
+                                        stubonly="true"/>
+                            </inputgroup>
+                        </n:div>
+                    </n:div>
+                </nodom>
+            </groupbox>
+
+        </n:div>
+    </n:div>
+    <n:div class="row mt-3">
+        <n:div class="col text-center">
+            <button label="${labels.action.close}" onClick="@command('closeDialog')" autodisable="self"
+                    stubonly="true"/>
+        </n:div>
+    </n:div>
+</window>
