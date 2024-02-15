@@ -1,16 +1,17 @@
 <img src="logo-ethereum.svg" width="380" alt="Ethereum logo">
 
-# Document hash storing on Ethereum blockchain
+# Document hashes on Ethereum blockchain from Java
 
-Document hash storing on Ethereum blockchain.
+Storing and reading document hashes on the Ethereum blockchain from Java.
 
-![Version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-1.0.1-2AAB92.svg)
+![Static Badge](https://img.shields.io/badge/Last%20update-05%20May%202022-blue)
 
 ![Version](https://img.shields.io/badge/JDK-17-red.svg)
 ![Version](https://img.shields.io/badge/Spring%20Boot-2.5.12-green.svg)
 ![Version](https://img.shields.io/badge/ZK-9.6.1-blue.svg)
 ![Version](https://img.shields.io/badge/Bootstrap-5.1.3-purple.svg)
-![Version](https://img.shields.io/badge/Web3j-5.0.0-purple.svg)
+![Version](https://img.shields.io/badge/Web3j-5.0.0-yellow.svg)
 
 ---
 
@@ -18,16 +19,12 @@ Document hash storing on Ethereum blockchain.
 
 * [About the Project](#about-the-project)
 * [Getting Started](#getting-started)
-  * [Prerequisites for local installation](#prerequisites-for-local-installation)
+  * [Prerequisites](#prerequisites)
   * [Installation](#installation)
 * [Usage](#usage)
 * [License](#license)
 
 # About the Project
-
-This project demonstrate **document hash** storing on the **Ethereum blockchain** from **Java**.
-
-This is a **Java Spring Boot** application with a **ZK** frontend, that use an embedded **H2** database for demonstration purpose.
 
 <table>
   <tr>
@@ -46,9 +43,13 @@ This is a **Java Spring Boot** application with a **ZK** frontend, that use an e
   </tr>
 </table>
 
+This project demonstrate **document hash** storing on the **Ethereum blockchain** from **Java**.
+
+This is a **Java Spring Boot** application with a **ZK** frontend, that use an embedded **H2** database for demonstration purpose.
+
 # Getting Started
 
-## Prerequisites for local installation
+## Prerequisites
 
 To run this project in a local environment, you need :
 - a local Ethereum blockchain running on `localhost` on port `7545`
