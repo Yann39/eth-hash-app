@@ -4,12 +4,12 @@
 
 Storing and reading document hashes on the Ethereum blockchain from Java.
 
-![Version](https://img.shields.io/badge/version-1.0.1-2AAB92.svg)
+![Version](https://img.shields.io/badge/version-1.0.2-2AAB92.svg)
 ![Static Badge](https://img.shields.io/badge/Last%20update-05%20May%202022-blue)
 
 ![Version](https://img.shields.io/badge/JDK-17-red.svg)
 ![Version](https://img.shields.io/badge/Spring%20Boot-2.5.12-green.svg)
-![Version](https://img.shields.io/badge/ZK-9.6.1-blue.svg)
+![Version](https://img.shields.io/badge/ZK-9.6.0-blue.svg)
 ![Version](https://img.shields.io/badge/Bootstrap-5.1.3-purple.svg)
 ![Version](https://img.shields.io/badge/Web3j-5.0.0-yellow.svg)
 
@@ -35,7 +35,13 @@ Storing and reading document hashes on the Ethereum blockchain from Java.
         <img alt="Spring logo" src="logo-spring.svg" height="36"/>
     </td>
     <td>
+        <img alt="H2 logo" src="logo-web3js.svg" height="58"/>
+    </td>
+    <td>
         <img alt="ZK logo" src="logo-zk.svg" height="96"/>
+    </td>
+    <td>
+        <img alt="H2 logo" src="logo-bootstrap.svg" height="56"/>
     </td>
     <td>
         <img alt="H2 logo" src="logo-h2.svg" height="64"/>
@@ -52,7 +58,7 @@ This is a **Java Spring Boot** application with a **ZK** frontend, that use an e
 ## Prerequisites
 
 To run this project in a local environment, you need :
-- a local Ethereum blockchain running on `localhost` on port `7545`
+- A local Ethereum blockchain running on `localhost` on port `7545`
 - A `Diploma` smart contract deployed to handle document hash read and write
 
 See the [eth-hash-chain](https://github.com/Yann39/eth-hash-chain) project for setting up a local blockchain with all the required capabilities.
@@ -69,7 +75,7 @@ See the [eth-hash-chain](https://github.com/Yann39/eth-hash-chain) project for s
    ```shell script
    mvn package
    ```
-4. Start your local blockchain
+4. Start your local blockchain (Ganache)
 5. Execute application from Intellij or run the JAR file, with the right profile :
    ```shell script
    java -Dspring.profiles.active=local -jar /target/eth-hash-app.jar
@@ -82,7 +88,15 @@ Simply reach the application home page at <http://localhost:8080/> to display th
 
 Navigate to the **Documents** menu, or direct access : <http://localhost:8080/diplomas>
 
+Connect to the Ethereum network (you should see a "connected" message) :
+
+<img src="screen-app1.png" alt="Application main page">
+
 Then simply add documents and try to save hashes to the Ethereum blockchain.
+
+You can then view documents :
+
+<img src="screen-app2.png" alt="Application view document page">
 
 # License
 
