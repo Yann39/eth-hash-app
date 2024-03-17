@@ -1,11 +1,11 @@
-<img src="logo-ethereum.svg" width="380" alt="Ethereum logo">
+<img src="doc/logo-ethereum.svg" width="380" alt="Ethereum logo">
 
 # Document hashes on Ethereum blockchain from Java
 
-Storing and reading document hashes on the Ethereum blockchain from Java.
+Storing and reading document hashes on the **Ethereum blockchain** from **Java**.
 
-![Version](https://img.shields.io/badge/version-1.0.2-2AAB92.svg)
-![Static Badge](https://img.shields.io/badge/Last%20update-05%20May%202022-blue)
+![Version](https://img.shields.io/badge/Version-1.0.2-2AAB92.svg)
+![Static Badge](https://img.shields.io/badge/Last_update-05_May_2022-blue)
 
 ![Version](https://img.shields.io/badge/JDK-17-red.svg)
 ![Version](https://img.shields.io/badge/Spring%20Boot-2.5.12-green.svg)
@@ -29,22 +29,22 @@ Storing and reading document hashes on the Ethereum blockchain from Java.
 <table>
   <tr>
     <td>
-        <img alt="Java logo" src="logo-java.svg" height="72"/>
+        <img alt="Java logo" src="doc/logo-java.svg" height="72"/>
     </td>
     <td>
-        <img alt="Spring logo" src="logo-spring.svg" height="36"/>
+        <img alt="Spring logo" src="doc/logo-spring.svg" height="36"/>
     </td>
     <td>
-        <img alt="H2 logo" src="logo-web3js.svg" height="58"/>
+        <img alt="H2 logo" src="doc/logo-web3js.svg" height="58"/>
     </td>
     <td>
-        <img alt="ZK logo" src="logo-zk.svg" height="96"/>
+        <img alt="ZK logo" src="doc/logo-zk.svg" height="96"/>
     </td>
     <td>
-        <img alt="H2 logo" src="logo-bootstrap.svg" height="56"/>
+        <img alt="Bootstrap logo" src="doc/logo-bootstrap.svg" height="56"/>
     </td>
     <td>
-        <img alt="H2 logo" src="logo-h2.svg" height="64"/>
+        <img alt="H2 logo" src="doc/logo-h2.svg" height="64"/>
     </td>
   </tr>
 </table>
@@ -90,13 +90,13 @@ Navigate to the **Documents** menu, or direct access : <http://localhost:8080/di
 
 Connect to the Ethereum network (you should see a "connected" message) :
 
-<img src="screen-app1.png" alt="Application main page">
+<img src="doc/screen-app1.png" alt="Application main page">
 
 Then simply add documents and try to save hashes to the Ethereum blockchain.
 
 You can then view documents :
 
-<img src="screen-app2.png" alt="Application view document page">
+<img src="doc/screen-app2.png" alt="Application view document page">
 
 # License
 
